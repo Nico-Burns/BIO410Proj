@@ -1,0 +1,47 @@
+---
+title: "BURNS_ProjectTopic.Rmd"
+output: html_document
+date: "2024-10-25"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#Yapping about Project
+Questions: With my data, I'm curious if there are significant differences in the amount of seeds per bloom my plant species' produce between 2 different sites in the Cascades, GLTC and White Water Ranch. Im also curious if the amount of species richness (alpha diversity) a plant has in its competitive background has a significant effect on seed output, and I will probably categorze plants into 2 categories; ones with a species richness equal or less than to three, and plants that have a species richness of 4 and above. 
+
+Data description: For my two main sites, there are 5 different stands, each with single species plots, specialist and generalist only plots, and 4 different generalist/specialist plots to cover all pairwise interactions. In each stand there are usually 4 species of plants, each species with 8-10 focal individuals, with each individual having an open (pollinators allowed) and closed (no pollination allowed) treatment for a variable number of blooms per treatment, per plant.
+
+Other data sets: I have not done enough research on other useful data out there that relates to competition for pollination, but I could imagine there is lots of useful data on what kinds of effects pollinator exclusion does to the number of seeds a bloom produces. I would also imagine there is useful data on how the density of competing neighbors effects the seed production or biomass of a plant in that competitive neighborhood. 
+
+#Proposed Workflow
+
+Lit Review: 
+1) As our planet and its climate changes, protecting our ecosystems and their interactions are crucial. Pollination is an essential ecosystem service that is imperative for the reproductive fitness of flowering plants, but with pollinator populations declining (Rhodes CJ), efforts to restore not only pollinator populations but flowering plant populations as well are important. However, restoration efforts of plants and pollinators are often disjointed (Menz, Myles H.M. et al.), as the techniques for plant restoration and pollination restoration differ. In my experiment, we seed 8 different flowering plant species in 6 different seed mixes ranging in diversity of pollination strategies. For each focal, we have an open treatment (pollination allowed) on blooms and a closed treatment (no pollination, blooms in a bag) on blooms. We predict that plants in mixes where diversity of pollination strategies is high, while have higher rates of fecundity.
+
+2) No one has addressed this specific question, but studies on plant competition for pollination do exist. One study examined how competition for pollination among plants can affect plant coexistence, with their results showing that competing for pollinators destabilizes plant co-existence by exacerbating already present competitive imbalances (Johnson, C.A., Dutt, P. & Levine, J.M.). More specifically, studies on how the amount of neighboring plants affect the fitness/seed output of a given plant also exist. One study on neighborhood effects on plant fecundity found that plants with a neighborhood of mature plants do much better fecundity wise rather than having a neighborhood of seedlings. (Silander, J.A., Pacala) However for my specific question for this project, the significance of how the # of neighbors a plant has effects the pollination boost metric (open seeds per bloom - closed seeds per bloom), I could not find any dataset on it. Which is probably good haha :) 
+
+3) Although my main project focuses on varying plant fitness based on how competitive their environment is for pollination, the question I will ask for my final project for this class is: How does the amount of neighbors a focal individual have effect the pollination boost metric, that is the difference in the amount of seeds per bloom the open treatment yielded and the amount of seeds the closed treatment yielded. I will combine data from 3-4 of my species across 2 plots from each site, depending on how much data we comb through. I will address the question by plotting the pollination boost metric for each individual focal and put the number of neighbors on the x axis as a continuous variable. I will then test for significant differences between the magnitude of the pollination boost metric of each focal to see how the amount of competitive neighbors affects fecundity. 
+
+4) My hypothesis is that I expect flowering individuals with a high density of competitive neighbors to have lower measures of fecundity, or that as the number of neighbors increases in a plant’s neighborhood, the more competition for resources they will experience and the less seeds they will produce. I also have a question about if the age/size of the neighbors has a significant difference on how much seeds individual flowers produce. Not super related to my project, but I'm also curious about if the severity of the burn that each burn pile is placed in has any effect on plant fecundity/growth. 
+
+Dataset Identification: At the moment, there are no additional data sets I plan to use since all my data comes from my project and the question is somewhat unique. However if I find any useful to my analysis, it will be listed here.
+
+Proposed Workflow: 
+Clean up data, get rid of NA’s, select data from Species I want to use and choose a handful of focals at random from a couple random sites between WW and GLTC.
+Download the census data sheets and merge/join the census data to each Individual focal.
+Create a function that takes in a data frame with an “open seeds - closed seeds” column, and a column that is the amount of neighbors for each focal. It will loop through the data frame and plot the pollination boost metric as a function of the amount of neighbors.
+I will then perform significance tests using the “lm4” function (subject to change) to check for statistical differences between focals with differing amounts of neighbors.
+I will also use vector data to map out where the locations of my focals are and display that as an image as well.
+
+Partner contributions: I am working alone on this one. 
+
+
+
+Bibliography
+Menz, Myles H.M. et al. Trends in Plant Science, Volume 16, Issue 1, 4 - 12
+Rhodes CJ. Pollinator Decline – An Ecological Calamity in the Making? Science Progress. 2018;101(2):121-160. doi:10.3184/003685018X15202512854527 
+Johnson, C.A., Dutt, P. & Levine, J.M. Competition for pollinators destabilizes plant coexistence. Nature 607, 721–725 (2022). https://doi.org/10.1038/s41586-022-04973-x
+Silander, J.A., Pacala, S.W. Neighborhood predictors of plant performance. Oecologia 66, 256–263 (1985). https://doi.org/10.1007/BF00379863 
+
