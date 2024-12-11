@@ -135,9 +135,9 @@ realstart <- which(names(cdata) == "S")
 censtart <- which(names(cdata)=="CLAAMO")
 cenend <- which(names(cdata)=="ERILAN")
 cenmat <- cdata[,censtart:cenend]
-cenmat
+
 cdata_no_bs <- cdata[,realstart:cenend]
-cdata
+
 select <- c(1:idend,censtart:cenend)
 cdata <- cdata[,select]
 iddat <- cdata[,1:idend]
